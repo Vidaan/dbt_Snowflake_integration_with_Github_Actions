@@ -1,0 +1,26 @@
+cosmosproject:
+  outputs:
+    dev:
+      account: njgpfpn-sb97793
+      database: DEMO_DBT
+      password: password
+      role: DBT_DEV_ROLE
+      schema: PUBLIC
+      threads: 1
+      type: snowflake
+      user: DBT_USER
+      warehouse: DBT_WH
+  target: dev
+dbt_sf_project:
+  outputs:
+    dev:
+      account: qe12318.us-east-2.aws
+      database: DBT_SF_DB
+      password: Vzdaan95
+      role: ACCOUNTADMIN
+      schema: TEST_SCHEMA
+      threads: 1
+      type: snowflake
+      user: VIDAAN95
+      warehouse: COMPUTE_WH
+  target: dev
