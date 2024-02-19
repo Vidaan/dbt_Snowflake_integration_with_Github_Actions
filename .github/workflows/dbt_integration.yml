@@ -1,0 +1,28 @@
+name: dbt_integration
+
+on:
+    pull_request:
+        branches: [main]
+
+
+jobs:
+    action:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v3
+
+            - name: dbt-run
+              id: dbt-run
+              uses: mwhitaker/dbt-action@profdir
+              with:
+                dbt_command: "dbt run"
+                dbt_project_folder: "dbt_sf_project"
+                dbt_profile_folder: "dbt_sf_project"
+              env:
+                DBT_USER: ${{ secrets.DBT_SF_USER }}
+                DBT_PASSWORD: ${{ secrets.DBT_SF_PASSWORD }}
+            
+    #        - name: Get the result
+    #          run: echo "${{ steps.dbt-run.outputs.result }}"
+    #          shell: bash 
