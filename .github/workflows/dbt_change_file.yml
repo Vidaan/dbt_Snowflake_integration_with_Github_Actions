@@ -13,16 +13,16 @@ jobs:
             
             - name: Move file
               run: |
-                mv dbt_sf_project/models/example/*.sql dbt_sf_project/tests/
+                mv dbt_sf_project/models/example/*.sql dbt_sf_project/executed_files/
             
             - name: Commit changes
               run: |
-                git config --local user.email "action@github.com"
-                git config --local user.name "Github Action"
+                git config --local user.email "vidaan95@gmail.com"
+                git config --local user.name "Vzlab"
                 git add .
                 git commit -m "Move SQL files from source folder to destination folder"
 
             - name: Push changes
               uses: ad-m/github-push-action@master
               with:
-                github_token: ${{ secrets.GITHUB_TOKEN }}
+                github_token: ${{ secrets.ACCESS_TOKEN }}
