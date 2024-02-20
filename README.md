@@ -2,7 +2,7 @@
 
 ![image](https://github.com/Vidaan/dbt_snowflake/assets/56769902/a37dbcd3-30c1-4c33-82e2-54fbe99ba90f)
 
-##How it works?
+## How it works?
 
 Create model in local machine and push it to the dbt repo.
 Once the pull request is accepted there would be an action that performs "dbt run" in an Ubuntu machine on Github.
