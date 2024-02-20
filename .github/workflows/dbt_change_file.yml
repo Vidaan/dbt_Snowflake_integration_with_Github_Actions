@@ -13,7 +13,7 @@ jobs:
             
             - name: Move file
               run: |
-                mv dbt_sf_project/models/example/*.sql dbt_sf_project/tests/
+                mv dbt_sf_project/models/example/*.sql dbt_sf_project/executed_models/
             
             - name: Commit changes
               run: |
