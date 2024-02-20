@@ -1,4 +1,4 @@
-# dbt_snowflake
+# Integrate dbt with Snowflake
 
 ## Overview
 This repo contains code that will help in integrating **dbt core** with **Snowflake** using **Github Actions**.
