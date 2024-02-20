@@ -23,6 +23,6 @@ jobs:
                 DBT_USER: ${{ secrets.DBT_SF_USER }}
                 DBT_PASSWORD: ${{ secrets.DBT_SF_PASSWORD }}
             
-    #        - name: Get the result
-    #          run: echo "${{ steps.dbt-run.outputs.result }}"
-    #          shell: bash 
+            - name: Get the result
+              run: echo "${{ steps.dbt-run.outputs.result }}"
+              shell: bash 
