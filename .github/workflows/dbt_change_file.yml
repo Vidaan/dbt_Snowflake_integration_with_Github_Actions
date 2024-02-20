@@ -1,0 +1,28 @@
+name: change_file_location
+
+on: 
+    push:
+        branches: [main]
+
+jobs:
+    move_file_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+            
+            - name: Move file
+              run: |
+                mv dbt_sf_project/models/example/*.sql dbt_sf_project/executed_files/
+            
+            - name: Commit changes
+              run: |
+                git config --local user.email "action@github.com"
+                git config --local user.name "Github Action"
+                git add .
+                git commit -m "Move SQL files from source folder to destination folder"
+
+            - name: Push changes
+              uses: ad-m/github-push-action@master
+              with:
+                github_token: ${{ secrets.GITHUB_TOKEN }}
